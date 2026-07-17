@@ -6,4 +6,4 @@ import pandas as pd
 
 fact_events['month_num']=fact_events['time_id'].dt.month
 final_df=fact_events.groupby(['client_id','month_num'])['user_id'].nunique()
-final_df.head()
+final_df.rename({'user_id':'user_num'})
